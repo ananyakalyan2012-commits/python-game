@@ -1,0 +1,26 @@
+import pgzrun
+import random
+WIDTH=500
+HEIGHT=500
+TITLE="alien shoot"
+msg=""
+alien=Actor("alien") #creating alien using actor function
+def draw():
+    screen.clear()
+    screen.fill(color=(67,111,255))
+    alien.draw() #to make it visible on screen
+    screen.draw.text(msg,center=(250,150),fontsize=30,
+                     color="green" )
+def place_alien():
+    alien.x=random.randint(80,WIDTH-80)
+    alien.y=random.randint(80,HEIGHT-80)
+
+def on_mouse_down(pos):
+    global msg
+    if alien.collidepoint(pos):
+        msg="GOOD SHOT!!!"
+        place_alien()
+    else:
+        msg="Try again!"
+
+place_alien()
