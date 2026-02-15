@@ -1,0 +1,17 @@
+import pgzrun
+from time import time
+import random
+WIDTH=500
+HEIGHT=500
+TITLE="connecting satellites"
+
+satellites=[]
+lines=[]
+next_satellite=0
+
+start_time=0
+total_time=0
+end_time=0
+
+
+pgzrun.go()
