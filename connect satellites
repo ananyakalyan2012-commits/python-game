@@ -14,4 +14,49 @@ total_time=0
 end_time=0
 
 
+pgzrun.go()import pgzrun
+from time import time
+import random
+WIDTH=500
+HEIGHT=500
+TITLE="connecting satellites"
+
+satellites=[]
+lines=[]
+next_satellite=0
+
+start_time=0
+total_time=0
+end_time=0
+num_of_satellites=15
+
+def create_satellite():
+    global start_time
+    for count in range(0,num_of_satellites):
+        s=Actor("satellite")
+        s.pos=random.randint(10,490),random.randint(10,490)
+        satellites.append(s)
+    start_time=time() #to get current time of computer    
+
+
+def draw():
+    global total_time
+    screen.blit("background sky",(0,0))
+    num=1
+    for s in satellites():
+        screen.draw.text(str(num),(s.pos[0],s.pos[1]+20))
+        s.draw()
+        num += 1
+
+def update():
+    pass
+
+def on_mouse_down(pos):
+    pass
+
+
+create_satellite()
+    
+
+
 pgzrun.go()
