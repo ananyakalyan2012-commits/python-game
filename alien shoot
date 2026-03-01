@@ -24,3 +24,5 @@ def on_mouse_down(pos):
         msg="Try again!"
 
 place_alien()
+
+pgzrun.go()
