@@ -21,6 +21,7 @@ def displayScore():
 
 def on_key_down(key):
     if key==keys.SPACE:
+        bullets.append(Actor("bullet"))
 
         bullets[-1].x=ship.x
         bullets[-1].y=ship.y-50
@@ -44,7 +45,7 @@ def update():
             bullet.y -= 10
     # to make enemy move down
     for enemy in enemies:
-        enemy.y += 10
+        enemy.y += 5
         if enemy.y >= HEIGHT:
             enemy.y=-100
             enemy.x=random.randint(30,WIDTH-30)
