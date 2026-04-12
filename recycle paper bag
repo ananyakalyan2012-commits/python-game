@@ -1,0 +1,71 @@
+import pgzrun
+import random
+WIDTH=650
+HEIGHT=650
+centre_x=WIDTH/2
+centre_y=HEIGHT/2
+centre=(centre_x,centre_y)
+FINAL_LEVEL=10
+start_speed=10
+
+ITEMS=["battery","bottle", "chips","metal","plastic_bag"]
+items_list=[]
+current_level=1
+animations_list=[]
+game_complete=False
+game_over=False
+
+
+def draw():
+    global items_list
+    global current_level
+    global game_complete
+    global game_over
+    screen.clear()
+    screen.blit("background", (0,0))
+    if game_over:
+        display_message("GAME OVER", "Try again!")
+    elif game_complete:
+        display_message("YOU WON!", "great job!")  
+    else:
+        for item in items_list:
+            item.draw()      
+
+def update():
+    pass
+
+def make_items(number_of_extra_items):
+    pass
+
+def get_option_to_create(number_of_extra_items):
+    pass
+
+def create_items(items_to_create):
+    pass
+
+def layout_items(items_to_layout):
+    pass
+
+def animate_items(items_to_animate):
+    pass
+
+def handle_game_over():
+    pass
+
+def on_mouse_down(pos):
+    pass
+
+def handle_game_complete():
+    pass
+
+def stop_animations(animations_to_stop):
+    pass
+
+def display_message(heading_text, sub_heading_text):
+    pass
+
+
+
+
+
+pgzrun.go()
