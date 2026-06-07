@@ -26,16 +26,17 @@ def draw():
     for answer_box in answer_boxes:
         screen.draw.filled_rect(answer_box,"yellow")
 
+    score=0
+
     #marquee box text
     marquee_message="Welcome to Quiz Master!"
-    #marquee_message+="{question_index} of {question_count}"
-    #screen.draw.textbox(str(time_left),(timer_box,"black"))
+    marquee_message+="{question_index} of {question_count}"
+    screen.draw.textbox(marquee_message,marquee_box,color="white")
+    screen.draw.textbox(str(time_left),(timer_box,color="black"))
 
 
 
 
-    #for answer_box in answer_boxes:
-        #screen.draw.filled_rect(answer_box,"blue")
 
 
 pgzrun.go()
