@@ -3,7 +3,7 @@ from pygame import Rect
 TITLE = "Quiz Master"
 WIDTH=800
 HEIGHT= 600
-marquee_box=Rect(0,0,800,60)
+marquee_box=Rect(0,0,800,60) #initial x, initial y, width, height
 question_box=Rect(20,100,550,140)
 timer_box=Rect(610,100,170,140)
 skip_box=Rect(610,270,170,470)
@@ -14,6 +14,17 @@ answer_box4=Rect(270,440,230,150)
 
 
 answer_boxes=[answer_box1,answer_box2,answer_box3,answer_box4]
+
+score = 0
+time_left = 10
+marquee_message = "" 
+is_game_over = False
+
+question_file_name = "questions.txt"
+questions = []
+question_count = 0
+question_index = 0
+
 def draw():
     global marquee_box
     global marquee_message
@@ -32,8 +43,26 @@ def draw():
     marquee_message="Welcome to Quiz Master!"
     marquee_message+="{question_index} of {question_count}"
     screen.draw.textbox(marquee_message,marquee_box,color="white")
-    screen.draw.textbox(str(time_left),(timer_box,color="black"))
+    screen.draw.textbox(str(time_left),timer_box,color="black",
+                        shadow = (0.5,0.5),scolor = "grey")
+    screen.draw.fill("skip",skip_box, color="white")
+    screen.draw.textbox(question [0].strip(),question_box,
+                         color= "black",shadow = (0.5,0.5), scolor = "grey" )
 
+    index=1
+    for answer_box in answer_boxes:
+        screen.draw.textbox(question[index].strip(),answer_box, color="black" )
+        index += 1
+    
+def update():
+    move_marquee()
+
+    
+def move_marquee():
+    pass
+
+def read_question_file():
+    pass
 
 
 
